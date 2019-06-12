@@ -92,6 +92,35 @@ public class linkedList {
 
         }
 
+        public void deleteByKey(int key){
+            node head = this.head;
+            node temp = head;
+            while(head != null){
+                if(head.getData() == key) {
+                    if(head == this.head){
+                        if(head.getNext() == null){
+                            head = null;
+                            break;
+                        }else{
+                            this.head = head.getNext();
+                            break;
+                        }
+                    }else if(head.getNext() == null){
+                        temp.setNext(null);
+                        head = null;
+                        break;
+                    }else{
+                        temp.setNext(head.getNext());
+                        head = null;
+                        break;
+                    }
+                }
+                temp = head;
+                head = head.getNext();
+            }
+
+        }
+
         public void printList(){
             node head = this.head;
 

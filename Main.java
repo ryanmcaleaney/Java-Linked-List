@@ -8,6 +8,7 @@ public class Main {
         l.addNode(15);
         l.prependList(0);
         l.insertByKey(1, 2);
+        l.deleteByKey(15);
         l.printList();
     }
 }
