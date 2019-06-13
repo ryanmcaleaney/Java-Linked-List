@@ -2,13 +2,11 @@ public class Main {
 
     public static void main(String[] args) {
         linkedList.list l = new linkedList.list();
-        l.addNode(1);
-        l.addNode(13);
-        l.addNode(14);
-        l.addNode(15);
-        l.prependList(0);
-        l.insertByKey(1, 2);
-        l.deleteByKey(15);
+        for(int i = 0; i<10; i++){
+            l.prependList(i);
+        }
+        System.out.println(l.getLength());
+        l.sortByData();
         l.printList();
     }
 }

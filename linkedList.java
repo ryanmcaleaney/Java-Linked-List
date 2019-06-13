@@ -121,6 +121,51 @@ public class linkedList {
 
         }
 
+        public void pop(){
+            node head = this.head;
+            node temp = head;
+            while(head != null){
+                if(head.getNext() == null){
+                    temp.setNext(null);
+                    head = null;
+                    break;
+
+                }
+                temp = head;
+                head = head.getNext();
+            }
+        }
+
+        public int getLength(){
+            int counter = 0;
+            node head = this.head;
+            while(head != null){
+                head = head.getNext();
+                counter+=1;
+            }
+
+            return counter;
+        }
+
+        public void sortByData(){
+            int counter = 0;
+            int length = this.getLength();
+            node head = this.head;
+
+            while(counter < length){
+                while(head.getNext() != null){
+                    if(head.getData() > head.getNext().getData()){
+                        int temp = head.getData();
+                        head.setData(head.getNext().getData());
+                        head.getNext().setData(temp);
+                    }
+                    head = head.getNext();
+                }
+                counter+=1;
+                head = this.head;
+            }
+        }
+
         public void printList(){
             node head = this.head;
 
